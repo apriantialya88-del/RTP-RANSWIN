@@ -1,0 +1,188 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14980\viewh15420\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <html lang="id">\
+<head>\
+  <meta charset="UTF-8">\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+  <title>Game Seru - Performance Board</title>\
+  <style>\
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');\
+\
+    body \{\
+      font-family: 'Poppins', sans-serif;\
+      background: linear-gradient(135deg, #0d0d0d, #1c1c1c);\
+      color: #fff;\
+      margin: 0;\
+      padding: 20px;\
+      display: flex;\
+      flex-direction: column;\
+      align-items: center;\
+    \}\
+\
+    h1 \{\
+      margin-bottom: 25px;\
+      text-align: center;\
+      color: #00ffcc;\
+      letter-spacing: 1px;\
+      text-shadow: 0 0 10px #00ffcc77;\
+    \}\
+\
+    .game-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+      gap: 18px;\
+      width: 100%;\
+      max-width: 1000px;\
+    \}\
+\
+    .card \{\
+      background-color: #222;\
+      border-radius: 16px;\
+      overflow: hidden;\
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);\
+      transition: 0.3s;\
+      transform: scale(1);\
+    \}\
+\
+    .card:hover \{\
+      transform: translateY(-5px) scale(1.02);\
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.25);\
+    \}\
+\
+    .card img \{\
+      width: 100%;\
+      height: 150px;\
+      object-fit: cover;\
+      border-bottom: 3px solid #00ffcc44;\
+    \}\
+\
+    .info \{\
+      padding: 10px 12px;\
+      text-align: center;\
+    \}\
+\
+    .jam \{\
+      background-color: #fca311;\
+      color: #000;\
+      padding: 6px;\
+      border-radius: 8px;\
+      font-weight: 600;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .pola \{\
+      background-color: #007bff;\
+      padding: 6px;\
+      border-radius: 8px;\
+      font-size: 13px;\
+      line-height: 1.6;\
+      margin-bottom: 10px;\
+    \}\
+\
+    .progress \{\
+      background-color: #333;\
+      border-radius: 10px;\
+      height: 12px;\
+      overflow: hidden;\
+    \}\
+\
+    .progress-bar \{\
+      height: 100%;\
+      width: 0%;\
+      background-color: #00ff88;\
+      border-radius: 10px;\
+      transition: width 1.5s ease-in-out;\
+    \}\
+\
+    .percent \{\
+      font-size: 14px;\
+      margin-top: 5px;\
+      color: #00ffcc;\
+      font-weight: 600;\
+    \}\
+\
+    @media (max-width: 600px) \{\
+      h1 \{ font-size: 20px; \}\
+      .info \{ padding: 8px; \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <h1>Game Seru - Performance Board</h1>\
+  <div class="game-grid">\
+\
+    <!-- Game 1 -->\
+    <div class="card">\
+      <img src="images/game1.jpg" alt="Game 1">\
+      <div class="info">\
+        <div class="jam">Jam Aktif: 18:00 - 19:30</div>\
+        <div class="pola">\
+          Pola:<br>\
+          Manual 5<br>\
+          Auto 20<br>\
+          Auto 50\
+        </div>\
+        <div class="progress">\
+          <div class="progress-bar" data-percent="73"></div>\
+        </div>\
+        <div class="percent">73%</div>\
+      </div>\
+    </div>\
+\
+    <!-- Game 2 -->\
+    <div class="card">\
+      <img src="images/game2.jpg" alt="Game 2">\
+      <div class="info">\
+        <div class="jam">Jam Aktif: 18:30 - 20:00</div>\
+        <div class="pola">\
+          Pola:<br>\
+          Auto 10<br>\
+          Manual 7<br>\
+          Auto 30\
+        </div>\
+        <div class="progress">\
+          <div class="progress-bar" data-percent="80" style="background-color:#00e676;"></div>\
+        </div>\
+        <div class="percent">80%</div>\
+      </div>\
+    </div>\
+\
+    <!-- Game 3 -->\
+    <div class="card">\
+      <img src="images/game3.jpg" alt="Game 3">\
+      <div class="info">\
+        <div class="jam">Jam Aktif: 19:00 - 21:00</div>\
+        <div class="pola">\
+          Pola:<br>\
+          Manual 3<br>\
+          Auto 20<br>\
+          Auto 10\
+        </div>\
+        <div class="progress">\
+          <div class="progress-bar" data-percent="66" style="background-color:#ffb300;"></div>\
+        </div>\
+        <div class="percent">66%</div>\
+      </div>\
+    </div>\
+\
+  </div>\
+\
+  <script>\
+    // Animasi isi progress bar saat halaman dimuat\
+    document.addEventListener("DOMContentLoaded", () => \{\
+      const bars = document.querySelectorAll(".progress-bar");\
+      bars.forEach(bar => \{\
+        const percent = bar.getAttribute("data-percent");\
+        setTimeout(() => \{\
+          bar.style.width = percent + "%";\
+        \}, 300);\
+      \});\
+    \});\
+  </script>\
+</body>\
+</html>}
